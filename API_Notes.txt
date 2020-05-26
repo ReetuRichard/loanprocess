@@ -1,0 +1,137 @@
+USER API's Loan User Creation 
+
+i)Signup
+API:localhost:8080/api/loan/createUser
+
+Type:JSON(application/json)
+Method: POST
+
+
+firstName:
+lastName:
+userName:
+password:
+
+//It also creates the BankManager and CRM(Customer Relationship Manager) admin's in backend asynchronously
+BankManager : username: "ABC",
+			 firstname: "Bank",
+			 lastname: "Manager",
+			 password: "Password@123"
+			 
+1st CRM	: username: "CRM_1",
+    firstname: "Customer",
+	lastname: "Manager",
+	password: "Password@123"
+	
+2nd CRM : username: "CRM_2",
+    firstname: "Customer",
+	lastname: "Manager",
+	password: "Password@123"
+	
+3rd CRM: username: "CRM_3",
+    firstname: "Customer",
+	lastname: "Manager",
+	password: "Password@123"
+	
+4th CRM : username: "CRM_4",
+    firstname: "Customer",
+	lastname: "Manager",
+	password: "Password@123"
+
+ii) Login
+API:localhost:8080/api/loan/login
+
+Type:JSON(application/json)
+Method:POST
+
+userName:
+password:
+
+iii) Applying Loan
+
+API:localhost:8080/api/loan/loanapplication
+Type:JSON(application/json)
+Method:POST
+
+userName:
+password:
+
+
+iv) LoanStatus
+API: localhost:8080/api/loan/loanapplicationstatus
+Type:JSON(application/json)
+Method:GET
+
+userName:
+password:
+
+
+Bank Manager
+
+
+i) Login (since already created in backend)
+API: localhost:8080/api/loan/login
+Type:JSON(application/json)
+Method:POST
+
+userName:ABC
+password:Password@123
+
+ii)Second level Accept/reject
+API: localhost:8080/api/loan/BankrequestAllList
+Type:JSON(application/json)
+Method:POST
+
+
+
+iii)all loans requests list
+API: localhost:8080/api/loan/BankList
+Type:JSON(application/json)
+Method:GET
+
+userName:
+password:
+
+
+
+Customer Relationship Managers Api
+
+i)Login
+already 4 default account created in backend
+Now,could login easily
+
+API: localhost:8080/api/loan/login
+Type:JSON(application/json)
+Method:POST
+
+1st CRM	: username: "CRM_1",
+	password: "Password@123"
+	
+2nd CRM : username: "CRM_2",
+	password: "Password@123"
+	
+3rd CRM: username: "CRM_3",
+	password: "Password@123"
+	
+4th CRM : username: "CRM_4",
+	password: "Password@123"
+
+
+
+
+ii)LoanRequest Status updated
+API: localhost:8080/api/loan/CRMrequestList/:id
+Type:JSON(application/json)
+Method:POST
+
+loan_status:"Accepted" or "Rejected"
+Note:"username and password must be entered 	of whom must be accepted or rejected"
+userName:
+password:
+
+
+iii)Loan requests List
+API: localhost:8080/api/loan/CRMList/:id
+Note:"id can be either 1,2,3 or 4"
+Type:JSON(application/json)
+Method:GET
